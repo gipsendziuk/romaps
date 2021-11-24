@@ -30,7 +30,7 @@
 <!-- REFERENCIA CAMADAS DE BASE CARTOGRÁFICA (SHAPEFILES) -->	
 		var shp_bacias_hidrograficas_mt ='https://github.com/gipsendziuk/shapes/raw/main/bacias_hidrograficas_mt.zip';
 		var shp_hidrogeologia ='https://github.com/gipsendziuk/shapes/raw/main/hidrogeologia.zip';	
-		var shp_localidades ='https://github.com/gipsendziuk/shapes/raw/main/localidades.zip;
+		var shp_localidades ='https://github.com/gipsendziuk/shapes/raw/main/localidades.zip';
 		var shp_sistemaviariosimples ='https://github.com/gipsendziuk/shapes/raw/main/sistemaviariosimples.zip';		
 <!-- CRIA CAMADAS DE BASE CARTOGRÁFICA -->	
 		var bacias_hidrograficas_mt = new L.Shapefile(shp_bacias_hidrograficas, { onEachFeature: function(feature, layer) { if (feature.properties) { layer.bindPopup(Object.keys(feature.properties).map(function(k) { return k + ": " + feature.properties[k]; }).join("<br />"), { maxHeight: 600 }); } } });
