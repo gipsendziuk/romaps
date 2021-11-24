@@ -28,10 +28,12 @@
 		var esrisat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom: 25, maxNativeZoom: 17});
 
 <!-- REFERENCIA CAMADAS DE BASE CARTOGRÁFICA (SHAPEFILES) -->	
-		var shp_bacias_hidrograficas_mt ='https://github.com/gipsendziuk/shapes/raw/main/bacias_hidrograficas_mt.zip';
-		var shp_hidrogeologia ='https://github.com/gipsendziuk/shapes/raw/main/hidrogeologia.zip';	
-		var shp_localidades ='https://github.com/gipsendziuk/shapes/raw/main/localidades.zip';
-		var shp_sistemaviariosimples ='https://github.com/gipsendziuk/shapes/raw/main/sistemaviariosimples.zip';		
+		var shp_bacias_hidrograficas_mt ='https://raw.githubusercontent.com/gipsendziuk/shapes/main/bacias_hidrograficas_mt';
+		var shp_hidrogeologia ='https://raw.githubusercontent.com/gipsendziuk/shapes/main/hidrogeologia.zip';	
+		var shp_localidades ='https://raw.githubusercontent.com/gipsendziuk/shapes/main/localidades.zip';
+		var shp_sistemaviariosimples ='https://raw.githubusercontent.com/gipsendziuk/shapes/main/sistemaviariosimples.zip';
+Mostrar na pasta
+';		
 <!-- CRIA CAMADAS DE BASE CARTOGRÁFICA -->	
 		var bacias_hidrograficas_mt = new L.Shapefile(shp_bacias_hidrograficas_mt, { onEachFeature: function(feature, layer) { if (feature.properties) { layer.bindPopup(Object.keys(feature.properties).map(function(k) { return k + ": " + feature.properties[k]; }).join("<br />"), { maxHeight: 600 }); } } });
 		var hidrogeologia = new L.Shapefile(shp_hidrogeologia, { onEachFeature: function(feature, layer) { if (feature.properties) { layer.bindPopup(Object.keys(feature.properties).map(function(k) { return k + ": " + feature.properties[k]; }).join("<br />"), { maxHeight: 600 }); } } });	
